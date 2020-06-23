@@ -1,0 +1,21 @@
+{{/*
+*    should give something like this for each element of the
+*    list with accounts :
+*
+*   # GitHub.com, vogu66
+*   Host github.com
+*   HostName github.com
+*     Preferredauthentications publickey
+*     IdentityFile ~/.ssh/github_vogu
+*
+*/ -}}
+{{ range .ssh_config}}
+
+# {{ .friendly }}
+Host {{ .host }}
+{{- if .hostname}}
+HostName {{ .hostname }}{{end}}
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/ {{- .id }}
+
+{{end}}

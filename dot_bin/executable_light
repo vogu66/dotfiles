@@ -1,0 +1,37 @@
+#!/bin/bash
+
+source ~/.functions
+
+ask()
+{
+	if [ -n "$(pidof -x $1)" ]
+	then
+		echo
+		read -p "Do you want to kill $1?" -n 1 -r
+		echo
+
+		if [[ $REPLY =~ ^[Yy]$ ]]
+		then
+			kil $1
+			echo "killed"
+		fi
+	fi
+}
+
+ask nm-applet
+
+if [ -z "$(pidof nm-applet)" ]
+then
+	systemctl stop NetworkManager
+	cmd="kil"
+else
+	cmd="ask"
+fi
+
+$cmd Discord
+$cmd caprine;
+$cmd skypeforlinux;
+$cmd pamac-tray
+
+ask redshift;
+ask shalarm;

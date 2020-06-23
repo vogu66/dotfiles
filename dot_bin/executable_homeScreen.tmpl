@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# ssh -i ~/.ssh/home_screen 10.0.0.2
+
+read -p "Do you want to extend screen?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	xrandr --newmode "distant" 106.50 1440 1528 1672 1904  900 903 909 934 -Hsync -Vsync
+	xrandr --addmode VIRTUAL1 "distant"
+	xrandr --output VIRTUAL1 --mode "distant"
+	# xrandr --output VIRTUAL1 --right-of LVDS1
+	xrandr --output VIRTUAL1 --pos 1366x-66 # adjust for the mouse not to leave the screen on a corner
+	x11vnc -display :0 -clip 1440x900+1366+0 -multiptr -forever < /dev/null &>/dev/null &
+	disown "x11vnc -display :0 -clip 1440x900+1366+0 -multiptr -forever"
+	sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &>/dev/null &
+	disown 'sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &> /dev/null'
+fi
+
+echo
+
+# backup :
+{{- /* works for folders if .name includes a "/" and .path does not have one at the end */}}
+
+read -p "Do you want to backup?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	read -p "Quiet?" -n 1 -r
+	echo
+	if [[ $REPLY =~ ^[Yy]$ ]]
+	then
+		{{- range .backup}}
+		rsync -az --delete --quiet -e "ssh" {{ .path }}{{ .name }} vogu@10.0.0.2:~/DATA{{.name}} < /dev/null &>/dev/null &
+		disown 'rsync -az --delete --quiet -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}}'
+		{{- end}}
+	else
+		{{- range .backup}}
+		rsync -az -P --delete -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}} &
+		{{- end}}
+	fi
+else
+	echo "you did not backup right now !"
+fi

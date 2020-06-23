@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pkill x11vnc
+xrandr --output VIRTUAL1 --off && xrandr --delmode VIRTUAL1 "distant" && xrandr && xrandr --rmmode "distant"
+
+sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &>/dev/null &
+disown 'sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &> /dev/null'

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+source ~/.functions
+
+ask()
+{
+	if [ -z "$(pidof -x $1)" ]
+	then
+		echo
+		read -p "Do you want to start $1?" -n 1 -r
+		echo
+
+		if [[ $REPLY =~ ^[Yy]$ ]]
+		then
+			detach $@
+			echo "started"
+		fi
+	fi
+}
+
+
+ask redshift-gtk -l {{.location}}
+ask shalarm 21:00
+
+ask nm-applet
+
+if [ -n "$(pidof nm-applet)" ]
+then
+	systemctl start NetworkManager
+	ask pamac-tray
+	ask caprine
+	ask skypeforlinux
+	# discord starts Discord so there is a trick
+	if [ -z "$(pidof -x Discord)" ]
+	then
+		echo
+		read -p "Do you want to start Discord?" -n 1 -r
+		echo
+
+		if [[ $REPLY =~ ^[Yy]$ ]]
+		then
+			detach discord
+			echo "started"
+		fi
+	fi
+fi
