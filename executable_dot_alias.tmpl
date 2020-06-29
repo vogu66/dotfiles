@@ -1,0 +1,68 @@
+#
+# ~/.alias
+#
+
+#personal aliases
+#
+
+#ssh :
+alias sshM='ssh -2 -X {{ (index .ssh_config 4).user -}} @ms807'
+alias sshfsM='sshfs {{ (index .ssh_config 4).user -}}@ms807:/home/
+{{- (index .ssh_config 4).user -}} /share ~/Documents/server'
+alias sshS='ssh 10.0.0.2'
+
+# DETACH :
+#
+# The detach function is in Functions
+#
+# Note : over-writing may not be the best idea since the shell output is lost,
+# so slightly changing the name may be better
+alias thunar='detach thunar'
+alias thunderbird='detach thunderbird'
+alias atom='detach atom'
+alias firefox='detach firefox-developer-edition'
+alias vivaldi='detach vivaldi-snapshot'
+alias matlab='/usr/local/MATLAB/R2017b/bin/matlab & disown /usr/local/MATLAB/R2017b/bin/matlab'
+alias open='detach xdg-open'
+alias pad='detach mousepad'
+alias pdf='detach qpdfview'
+alias okular='detach okular'
+alias xed='detach xed'
+alias pdfa='qpdfview *.pdf < /dev/null &>/dev/null & disown qpdfview'
+alias ie="wine 'C:\Program Files\\Internet Explorer\\iexplore'"
+alias ltspice="detach ltspice"
+alias terminal="detach xfce4-terminal"
+
+alias reactn='create-react-native-app'
+alias miniconda='source /opt/miniconda3/etc/profile.d/conda.sh'
+alias bexec='bundle exec'
+
+
+# sometimes, dark themes mess up...
+alias foxit='foxitreader -style=bb10bright'
+alias vbox='virtualbox -style=cleanlooks'
+
+# LaTex :
+alias pdft='pdflatex *.tex && pdflatex *.tex'
+alias pdft2='pdflatex -shell-escape *.tex && bibtex *.aux && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex'
+
+
+# General :
+# cleanup is in bin
+alias cleanup='sudo bash cleanup'
+alias clear='clear && clear'
+
+alias trash='gvfsd-trash'
+alias term='detach xfce4-terminal'
+
+
+# kill alarm
+# all functions are in Functions
+alias kila="kil shalarm"
+
+# stuff that I keep forgetting
+# neofetch
+# optirun
+# primusrun -> use this for good quality
+# atom find stuff : ctrl-shift-p
+# WINEPREFIX=~/.wine32ie8 WINEARCH=win32 wine 'C:\Program Files\\Internet Explorer\\iexplore'
