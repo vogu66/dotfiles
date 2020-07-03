@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2017 for the part of zshrc from https://github.com/Chrysostomus/manjaro-zsh-config/blob/master/LICENSE
+
 Copyright (c) 2020 for the rest
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
