@@ -13,8 +13,9 @@ then
 	xrandr --output VIRTUAL1 --pos 1366x-66 # adjust for the mouse not to leave the screen on a corner
 	x11vnc -display :0 -clip 1440x900+1366+0 -multiptr -forever < /dev/null &>/dev/null &
 	disown "x11vnc -display :0 -clip 1440x900+1366+0 -multiptr -forever"
-	sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &>/dev/null &
-	disown 'sh "/home/vogu/.conky/conky-start2.sh" < /dev/null &> /dev/null'
+	killall conky
+	conky < /dev/null &>/dev/null &
+	disown 'conky < /dev/null &> /dev/null'
 fi
 
 echo
