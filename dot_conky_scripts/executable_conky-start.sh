@@ -2,7 +2,7 @@
 
 # TODO eventually, should detect whether conky runs already before deciding
 # whether to sleep
-#sleep 56s
+sleep 56s
 killall conky
 
 # select theme
@@ -39,8 +39,9 @@ cp -rf ~/.conky_scripts/$theme/icon_config/* /home/vogu/.config/xfce4/desktop
 # 	set options for wallpaper
 #   just copy the configuration from settings editor
 
-# sleep 5s # to be sure the computer has time to update everything
-		 # although it shouldn't be necessary
+sleep 5s # to be sure the computer has time to update everything
+		 # although it shouldn't be necessary,
+		 # but better safe than sorry
 
 ln -fs ~/.conky_scripts/$theme/conky.config ~/.config/conky/conky.config
 
