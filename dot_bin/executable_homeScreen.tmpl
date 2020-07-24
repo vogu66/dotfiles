@@ -27,19 +27,7 @@ read -p "Do you want to backup?" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-	read -p "Quiet?" -n 1 -r
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]
-	then
-		{{- range .backup}}
-		rsync -az --delete --quiet -e "ssh" {{ .path }}{{ .name }} vogu@10.0.0.2:~/DATA{{.name}} < /dev/null &>/dev/null &
-		disown 'rsync -az --delete --quiet -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}}'
-		{{- end}}
-	else
-		{{- range .backup}}
-		rsync -az -P --delete -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}} &
-		{{- end}}
-	fi
+	~/.bin/backup_scripts/home_screen
 else
 	echo "you did not backup right now !"
 fi

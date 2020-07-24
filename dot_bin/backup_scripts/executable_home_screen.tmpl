@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read -p "Quiet?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	{{- range .backup.home_screen}}
+	rsync -az --delete --quiet -e "ssh" {{ .path }}{{ .name }} vogu@10.0.0.2:~/DATA{{.name}} < /dev/null &>/dev/null &
+	disown 'rsync -az --delete --quiet -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}}'
+	{{- end}}
+else
+	{{- range .backup.home_screen}}
+	rsync -az -P --delete -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}} &
+	{{- end}}
+fi

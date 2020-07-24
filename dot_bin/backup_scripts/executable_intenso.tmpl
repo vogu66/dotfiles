@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+udevil mount /dev/sdb1
+
+{{ range .backup.datakey -}}
+
+bup -d /media/INTENSO/bup index {{ .path }}
+bup -d /media/INTENSO/bup save --strip -n DATA ~/DATA
+
+{{ end -}}
+
+udevil umount /dev/sdb1

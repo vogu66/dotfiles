@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+udevil mount /dev/sdb2
+
+{{ range .backup.datakey -}}
+	rsync -r {{ .path }} /media/DataKey/back
+{{- end }}
+
+udevil umount /dev/sdb2

@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+echo "Choose between"
+
+ls ~/.bin/backup_scripts
+
+echo ""
+
+read backup
+
+~/.bin/backup_scripts/$backup

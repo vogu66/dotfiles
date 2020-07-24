@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+sudo mount /dev/sda3 /mnt/backup
+
+{{ range .backup.datakey -}}
+	sudo rsync -r {{ .path }} /mnt/backup
+{{- end }}
+
+sudo umount /dev/sda3
