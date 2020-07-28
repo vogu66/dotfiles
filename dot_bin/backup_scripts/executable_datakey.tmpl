@@ -6,4 +6,17 @@ udevil mount /dev/sdb2
 	rsync -r {{ .path }} /media/DataKey/back
 {{- end }}
 
+cd /media/DataKey/chezmoi/dotfiles
+git pull
+
+cd /media/DataKey/chezmoi/data
+git pull
+
+cd /media/DataKey/chezmoi
+wget https://raw.githubusercontent.com/twpayne/chezmoi/master/docs/INSTALL.md && rm INSTALL.md && mv INSTALL.md.1 INSTALL.md
+
+curl -sfL https://git.io/chezmoi | sh
+
+cd ~
+
 udevil umount /dev/sdb2
