@@ -2,11 +2,12 @@
 
 # TODO eventually, should detect whether conky runs already before deciding
 # whether to sleep
-sleep 56s
+# sleep 56s
 killall conky
 
 # select theme
 # TODO for now -- eventually, should select randomly
+# theme="tree"
 theme="redhead"
 # TODO eventually, should differentiate between single and double screen, too
 # or screen rotated or resolution or whatever
@@ -43,6 +44,6 @@ sleep 5s # to be sure the computer has time to update everything
 		 # although it shouldn't be necessary,
 		 # but better safe than sorry
 
-ln -fs ~/.conky_scripts/$theme/conky.config ~/.config/conky/conky.config
+ln -fs ~/.conky_scripts/$theme/conky.conf ~/.config/conky/conky.conf
 
 conky
