@@ -43,8 +43,9 @@ alias foxit='foxitreader -style=bb10bright'
 alias vbox='virtualbox -style=cleanlooks'
 
 # LaTex :
-alias pdft='pdflatex *.tex && pdflatex *.tex'
-alias pdft2='pdflatex -shell-escape *.tex && bibtex *.aux && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex'
+alias pdft='lualatex *.tex && lualatex *.tex'
+alias pdft2='latexmk -lualatex -shell-escape'
+alias pdft_relic='pdflatex -shell-escape *.tex && bibtex *.aux && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex'
 
 
 # General :
