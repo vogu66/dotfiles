@@ -14,6 +14,11 @@ detach ()
 {
 	$@ < /dev/null &>/dev/null &
 	disown '$@ < /dev/null &> /dev/null'
+
+	sleep 1s
+	echo "process at pid:"
+	pidof @1
+	echo "in some cases the check doesn't work (e.g. discord launches Discord)"
 }
 
 # git with the right user
