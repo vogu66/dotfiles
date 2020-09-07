@@ -2,7 +2,7 @@
 
 # TODO eventually, should detect whether conky runs already before deciding
 # whether to sleep
-# sleep 56s
+sleep 56s
 killall conky
 
 # select theme
