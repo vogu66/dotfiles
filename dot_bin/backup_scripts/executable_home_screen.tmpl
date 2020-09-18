@@ -12,4 +12,8 @@ else
 	{{- range .backup.home_screen}}
 	rsync -az -P --delete -e "ssh" {{.path}}{{.name}} vogu@10.0.0.2:~/DATA{{.name}} &
 	{{- end}}
+	wait
 fi
+
+echo "all done"
+echo "you can close this shell"
