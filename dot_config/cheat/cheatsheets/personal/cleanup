@@ -1,0 +1,16 @@
+# general cleanup :
+$ cleanup
+
+# clutter files :
+$ bleachbit
+
+# additionally :
+# check the home folder for old param files from removed programs
+
+# check if need defragmenting :
+$ sudo e4defrag -c / # pour ext4
+
+$ sudo umount /dev/sda7
+$ udefrag /dev/sda7
+# only rarely !
+# reboot afterwards !

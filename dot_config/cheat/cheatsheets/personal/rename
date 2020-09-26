@@ -1,0 +1,23 @@
+# To lowercase all files and folders in current directory:
+rename 'y/A-Z/a-z/' *
+
+# To replace 'sometext' with 'replacedby' in all files in current directory:
+rename 's/sometext/replacedby/' *
+
+# from manual:
+
+Given the files foo1, ..., foo9, foo10, ..., foo278, the commands
+
+    rename foo foo00 foo?
+    rename foo foo0 foo??
+
+will turn them into foo001, ..., foo009, foo010, ..., foo278.  And
+
+    rename .htm .html *.htm
+
+will fix the extension of your html files.  Provide an empty string for
+shortening:
+
+    rename '_with_long_name' '' file_with_long_name.*
+
+will remove the substring in the filenames.

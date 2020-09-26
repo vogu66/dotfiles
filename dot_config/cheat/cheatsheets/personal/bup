@@ -1,0 +1,24 @@
+# init (shouln't be done every time)
+bup init <git on local disk> -r :/mnt/bup
+
+# need to have the disk mounted
+sudo mount /dev/sdb1 /mnt
+# here, mounted on /run/media/vogu/INTENSO
+
+# index stuff
+bup index ~/DATA/aaaa-Dossiers_Vincent ~/DATA/Test ~/DATA/zzzzzz_cours_ressources ~/DATA/others ~/DATA/Onedrive_Linux
+# or
+bup -d /run/media/vogu/INTENSO/bup index ~/DATA/aaaa-Dossiers_Vincent ~/DATA/Test ~/DATA/zzzzzz_cours_ressources ~/DATA/others ~/DATA/Onedrive_Linux
+# or
+BUP_DIR=/run/media/vogu/INTENSO/bup bup index ~/DATA/aaaa-Dossiers_Vincent ~/DATA/Test ~/DATA/zzzzzz_cours_ressources ~/DATA/others ~/DATA/Onedrive_Linux
+
+# saving the stuff
+bup save --strip -r :/mnt/bup -n DATA ~/DATA
+# may add -<1-9> for compression
+# or
+bup -d /run/media/vogu/INTENSO/bup save --strip -n DATA ~/DATA
+
+# access files : mounted fuse filesystem in ~/Documents/server
+bup -d /run/media/vogu/INTENSO/bup fuse ~/Documents/server
+# finish access : 
+umount ~/Documents/server

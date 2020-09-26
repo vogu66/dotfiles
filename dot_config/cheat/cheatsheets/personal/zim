@@ -1,0 +1,3 @@
+count pages : 
+    go to directory
+    $ find | grep -c txt

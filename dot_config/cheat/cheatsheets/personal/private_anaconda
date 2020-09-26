@@ -1,0 +1,19 @@
+	$ source /opt/miniconda3/etc/profile.d/conda.sh
+	close the bash afterwards
+
+https://aur.archlinux.org/packages/anaconda
+
+	$ conda create -n myroot --clone /opt/anaconda
+	$ source activate myroot
+	$ conda install pyqt
+	
+	this is to say I shouldn't modify the anaconda (base) install, but I should rather clone it into a distinct environment before destroying it...
+	
+in general  
+	
+	$ conda create -n nameOfEnv
+	
+	$ conda create -p path/nameOfEnv
+	
+	$ conda activate nameOfEnv
+	$ conda deactivate nameOfEnv

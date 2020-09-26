@@ -1,0 +1,11 @@
+# go to directory
+chezmoi cd
+
+# chezmoi, test, no modifications, verbose
+chezmoi -nv apply
+
+# chezmoi apply changes
+chezmoi apply
+
+# test template command
+chezmoi execute-template '{{ <command> }}'

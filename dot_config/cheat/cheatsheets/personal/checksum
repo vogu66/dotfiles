@@ -1,0 +1,8 @@
+# SHA-1 or SHA-256
+
+$ sha1sum [document]
+$ sha256sum [document]
+
+# GPG
+$ gpg --import [...].gpg
+$ gpg --verify [document].sig

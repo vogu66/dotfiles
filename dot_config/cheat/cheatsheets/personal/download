@@ -1,0 +1,5 @@
+# for downloading with another name
+wget -O "name" "url"
+
+# for continuing the download
+wget -c "url"

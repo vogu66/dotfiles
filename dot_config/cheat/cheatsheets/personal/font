@@ -1,0 +1,9 @@
+# font list :
+fc-list
+fc-list -f "%{family} --- %{style}\n" 
+
+# search a font :
+fc-list -f "%{family}\n" | grep <name>
+
+# font for specific character
+fc-match -s monospace:charset=1F4A9

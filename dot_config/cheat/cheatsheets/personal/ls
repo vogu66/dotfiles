@@ -1,0 +1,49 @@
+# To display everything in <dir>, excluding hidden files:
+ls <dir>
+
+# To display everything in <dir>, including hidden files:
+ls -a <dir>
+
+# To display all files, along with the size (with unit suffixes) and timestamp
+ls -lh <dir>
+
+# To display files, sorted by size:
+ls -S <dir>
+
+# To display directories only:
+ls -d */ <dir>
+
+# To display directories only, include hidden:
+ls -d .*/ */ <dir>
+
+# permission listing : 
+
+First character : 
+    * - : normal file
+    * d : directory
+    * l : soft link
+
+Permissions :
+    * r : read
+    * w : write
+    * x : execute
+By groups of three, permissions for :
+    * User, owner
+    * Group
+    * Other
+
+First number : link count
+Owner
+Group
+Size
+Date and time of creation/last modification
+File name
+
+Permission equivalence :
+
+Binary coding for numbers
+4 = read
+2 = write
+1 = execute
+sum = total permissions
+order : again, user, group, other

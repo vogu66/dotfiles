@@ -1,0 +1,3 @@
+# for big archives, compression is best handled with 7z
+# sub-folders should be compressed separately with the 7z format
+# it should be possible to fuse 7z archives by decompressing one and adding it to the other

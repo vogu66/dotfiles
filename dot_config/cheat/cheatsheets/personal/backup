@@ -1,0 +1,20 @@
+# copies where you are
+rsync -av ~/DATA/aaaa-Dossiers_Vincent .
+
+# see 
+cheat bup
+# for bup backups
+
+# see
+cat ~/.bin/homeScreen
+# for backup to external drive
+
+
+# customary files to backup
+~/DATA/aaaa-Dossiers_Vincent
+~/DATA/Onedrive_Linux
+~/DATA/others
+~/DATA/Test
+~/DATA/zzzzzz_cours_ressources
+
+# don't forget to replace the extra test partition

@@ -1,0 +1,24 @@
+
+$ latexmk # should work all the time though
+
+--------------
+
+# Makefile : 
+$ make -B
+
+>> document.pdf: document.tex bib.bib
+	xelatex document.tex
+	bibtex document.aux
+	xelatex document.tex
+	xelatex document.tex
+
+# xelatex, lualatex, pdflatex, latex can replace, c'est selon
+
+--------------
+
+# in aliases :
+
+$ alias pdft='pdflatex *.tex && pdflatex *.tex'
+$ alias pdft2='pdflatex -shell-escape *.tex && bibtex *.aux && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex && pdflatex -shell-escape *.tex'
+
+
