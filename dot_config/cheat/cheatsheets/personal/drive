@@ -1,0 +1,7 @@
+# Google drive TFE:
+
+rclonesync ~/00-current/tfe/drive googleDrive:/
+
+# Onedrive:
+
+onedrive --synchronize

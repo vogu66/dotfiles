@@ -14,3 +14,9 @@ $ sudo umount /dev/sda7
 $ udefrag /dev/sda7
 # only rarely !
 # reboot afterwards !
+
+# check trim support for ssd
+$ lsblk --discard # non-zero DISC-GRAN & DISC-MAX means trim is supported
+
+# trim file system
+$ fstrim -a
