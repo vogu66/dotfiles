@@ -19,9 +19,9 @@ then
 	xrandr --addmode VIRTUAL1 "distant"
 	xrandr --output VIRTUAL1 --mode "distant"
 	# xrandr --output VIRTUAL1 --right-of LVDS1
-	xrandr --output VIRTUAL1 --pos 1920x-156 # adjust for the mouse not to leave the screen on a corner
-	x11vnc -display :0 -clip 1366x768+1920+0 -multiptr -forever < /dev/null &>/dev/null &
-	disown "x11vnc -display :0 -clip 1366x768+1920+156 -multiptr -forever"
+	xrandr --output VIRTUAL1 --pos 1920x156 # adjust for the mouse not to leave the screen on a corner
+	x11vnc -display :0 -clip 1366x768+1920+156 -multiptr -forever < /dev/null &>/dev/null &
+	disown "x11vnc -display :0 -clip 1366x768+1920+0 -multiptr -forever"
 	# killall conky
 	# conky < /dev/null &>/dev/null &
 	# disown 'conky < /dev/null &> /dev/null'
