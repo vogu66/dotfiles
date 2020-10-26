@@ -1,0 +1,5 @@
+#!/bin/bash
+
+systemctl start sshd
+
+vncviewer -Fullscreen -FullscreenSystemKeys -RemoteResize -SecurityTypes None -PreferredEncoding raw -CompressLevel 1 -CustomCompressLevel -AutoSelect=0 10.0.0.5

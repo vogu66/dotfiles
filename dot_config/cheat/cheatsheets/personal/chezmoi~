@@ -9,6 +9,3 @@ chezmoi apply
 
 # test template command
 chezmoi execute-template '{{ <command> }}'
-
-# chezmoi private directory
-~/.config/chezmoi
