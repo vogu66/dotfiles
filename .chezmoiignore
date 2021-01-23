@@ -4,3 +4,17 @@ LICENSE.md
 .conky_scripts/last_theme
 .conky_scripts/*/icon_config/*
 .conky_scripts/*/icon_config
+
+# files ignored when required package not present:
+
+{{ if lookPath "conky" }}{{ else -}}
+.conky_scripts
+{{ end -}}
+
+{{ if lookPath "octave" }}{{ else -}}
+.octaverc
+{{ end -}}
+
+{{ if lookPath "zim"}}{{ else -}}
+.config/zim
+{{ end -}}
