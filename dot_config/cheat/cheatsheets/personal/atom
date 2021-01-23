@@ -1,0 +1,5 @@
+# activate or deactivate linter spell
+# Packages:
+linter-spell
+linter-spell-latex
+linter-spell-project
