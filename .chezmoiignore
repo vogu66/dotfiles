@@ -7,6 +7,10 @@ LICENSE.md
 
 # files ignored when required package not present:
 
+{{ if lookPath "awesome"}}{{ else -}}
+.config/awesome
+{{ end -}}
+
 {{ if lookPath "conky" }}{{ else -}}
 .conky_scripts
 {{ end -}}
