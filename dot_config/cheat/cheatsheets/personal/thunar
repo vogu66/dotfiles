@@ -1,0 +1,5 @@
+# slow on cold start
+
+sudo nano /usr/share/gvfs/mounts/network.mount
+
+~ Automount=false
