@@ -69,3 +69,6 @@ cat ~/.bin/cleanup
 ./configure
 make
 make install
+
+# to check whether need to re-build stuff after update
+checkrebuild
