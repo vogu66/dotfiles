@@ -70,5 +70,8 @@ cat ~/.bin/cleanup
 make
 make install
 
+# but to install a PKGBUILD
+makepkg -si
+
 # to check whether need to re-build stuff after update
 checkrebuild
