@@ -1,0 +1,5 @@
+# autosub video:
+autosub video.mp4
+
+# autosub in french
+autosub -S fr -D fr french\ video.mp4
