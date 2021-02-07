@@ -1,0 +1,7 @@
+# update databases
+
+sudo freshclam 
+
+# scan directory recursively
+
+clamscan -r <directory>

@@ -46,4 +46,4 @@ Binary coding for numbers
 2 = write
 1 = execute
 sum = total permissions
-order : again, user, group, other
+order : user, group, other

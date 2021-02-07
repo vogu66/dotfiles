@@ -1,0 +1,5 @@
+journalctl -p 3 -xb
+neofetch
+inxi -Fazy
+
+# for now just check the Manjaro forum for more

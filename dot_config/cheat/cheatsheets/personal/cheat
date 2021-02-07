@@ -1,0 +1,21 @@
+# To see example usage of a program:
+cheat <command>
+
+# To edit a cheatsheet
+cheat -e <command>
+
+# To list available cheatsheets
+cheat -l
+
+# List personal cheatsheets
+cheat -l -t personal
+
+# To search available cheatsheets
+cheat -s <command>
+
+# To get the current `cheat' version
+cheat -v
+
+# Get more interesting things you could want to do
+cheat -h
+# it's actually quite exhaustive
