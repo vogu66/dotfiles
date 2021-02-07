@@ -17,5 +17,7 @@ Host {{ .host }}
 HostName {{ .hostname }}{{end}}
   Preferredauthentications publickey
   IdentityFile ~/.ssh/ {{- .id }}
+  {{- if .user}}
+  User {{ .user }}{{end}}
 
 {{end}}
