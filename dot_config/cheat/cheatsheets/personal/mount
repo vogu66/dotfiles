@@ -27,3 +27,7 @@ udevil umount /dev/sdX1
 
 # un-mount everything udevil mounted
 udevil clean
+
+# make sure everything is written to the disk
+# (avoid data loss when sensitive)
+sudo sync
