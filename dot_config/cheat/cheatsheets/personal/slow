@@ -1,0 +1,25 @@
+#####
+# This is the emergency slow computer page
+#####
+
+# DIAGNOSTIC THE SYSTEM
+# iotop and htop are nice
+# faster though:
+vmstat 1 3
+
+# IF memory -> free is very low, you're lacking RAM
+# No emergency response for now
+# May consider adding SWAP file
+# You need to kill stuff, though:
+pkill <stuff>
+pkill -9 <stuff> # force killing
+killall -I <stuff>
+killall -I -9 <stuff> # force killing
+killall -y 5m # kills everything you launched in the last 5 min
+
+# if IO has high numbers -- lots of read/write on the disk
+# if CPU -> id at 0, your cpu is overloaded
+
+# you may consider killing the process and maybe check
+# https://wiki.archlinux.org/index.php/Improving_performance
+# to assign background priority in the future

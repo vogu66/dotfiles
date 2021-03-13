@@ -1,6 +1,6 @@
 # Google drive TFE:
 
-rclonesync ~/00-current/tfe/drive googleDrive:/
+rclonesync ~/00-current/tfe/literature/drive googleDrive:/
 
 # Onedrive:
 
