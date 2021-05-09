@@ -75,3 +75,8 @@ makepkg -si
 
 # to check whether need to re-build stuff after update
 checkrebuild
+
+#############
+
+# Roll back or downgrade stuff:
+sudo downgrade <package name>
