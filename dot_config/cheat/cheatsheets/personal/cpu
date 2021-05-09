@@ -1,0 +1,5 @@
+# check cpu usage and performance plans
+cpupower frequency-info
+
+# change cpu power options
+sudo cpupower frequency-set <performance plan>
